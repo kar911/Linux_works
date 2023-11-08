@@ -1,0 +1,35 @@
+#!/bin/bash
+function main(){
+	while read sub;do
+		if host "$sub.$domian" &> /dev/null;then
+			echo "$sub.$domain"
+		fi
+	done < file.txt
+}
+
+function help(){
+echo "-h is for help or use --help"
+}
+case $1 in
+	"-d")
+		domain=$2
+		;;
+	"-h"|"--help")
+		help
+		exit
+		;;
+	*)
+		echo "use either -d, -h, --help $1 is invalid"
+		help
+		exit 10
+		;;
+esac
+
+if [[ ! -z $domain ]];then
+	main
+else
+	echo "error one arg requied with the flag -d"
+	exit 10
+fi
+
+

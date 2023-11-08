@@ -1,0 +1,18 @@
+#!/bin/bash
+while [ $# -gt 0 ];do
+while read subb;do
+	if host "$subb.$1.com" &> /dev/null;then
+		echo "$subb.$1.com is alive"
+	fi
+done < file.txt 
+shift
+done
+
+#!/bin/bash
+while read x;do
+while read subb;do
+	if host "$subb.$x.com" &> /dev/null;then
+		echo "$subb.$x.com is alive"
+	fi
+done < file.txt 
+done

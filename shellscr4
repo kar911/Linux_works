@@ -1,0 +1,13 @@
+#!/bin/bash
+cd /home/ubun-tuu/ABCDEFU
+mkdir fold{1..10}
+for i in {1..10}
+do
+	cd fold$i
+	for j in {1..10}
+	do
+
+		echo "this file is present at $(pwd)/file$j " > file$j
+	done
+	cd ..
+done

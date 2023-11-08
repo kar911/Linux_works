@@ -1,0 +1,12 @@
+#!/bin/bash
+read -p "Enter a number " c
+if  [ $c -lt 0 ] 
+then
+	echo Negative
+elif [ $c -gt 0 ]
+then
+	echo Positive
+else
+	echo Zero
+fi
+
